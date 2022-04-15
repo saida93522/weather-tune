@@ -1,0 +1,35 @@
+{% extends 'main.html' %} {% load static %} {% block content %}
+<header class="header">
+  <div class="overlay"></div>
+
+  <img src="{% static '/img/tog.jpg' %}" alt="" />
+  <!-- The header content -->
+  <div class="container h-100">
+    <div class="d-flex h-100 text-center align-items-center">
+      <div class="w-100 text-white">
+        <h1 class="display-3"></h1>
+        <p class="lead mb-0"></p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="my-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 mx-auto">
+        <h1 class="display-6 mb-2">
+          This month's book club pick is <a href="#">Kingdom of Ash</a> by Sarah
+          J. Maas
+        </h1>
+        <p class="lead mb-0">
+          This month, we are wrapping up our throne of glass series
+        </p>
+        <p></p>
+        <p class="mb-0"></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock content %}

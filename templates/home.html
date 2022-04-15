@@ -1,0 +1,61 @@
+{% extends 'main.html' %} {% load static %} {% load crispy_forms_tags %}
+<!---->
+{% block content %}
+<section class="home">
+  <!--Weather Data-->
+  <div class="container px-1 py-5">
+    <div class="row m-auto">
+      <div class="d-flex align-items-end card card-data p-3">
+        <h1 class="ml-auto mr-2 temp-font display-4">{{weather_temp}}&#176;</h1>
+        <p class="h6 ml-auto mr-4 mb-3 desc-font">{{weather_description}}</p>
+        <p class="h6 ml-auto mr-4 mb-3 desc-font">Feels like {{main}}&#176;</p>
+        <p class="ml-auto mr-4 mt-3 mb-0">{{city}},{{country}}</p>
+        <p class="date-font mb-0 mr-4 mt-auto">{{date}}</p>
+      </div>
+    </div>
+    <div class="row m-auto text-center mt-5"></div>
+  </div>
+  <!--Playlist-->
+  {% comment %}
+  <section>
+    <div class="container">
+      <div class="spotify-embed p-5">
+        <iframe
+          style="border-radius: 12px"
+          src="https://open.spotify.com/embed/playlist/4GtQVhGjAwcHFz82UKy3Ca?utm_source=generator&theme=0"
+          width="100%"
+          height="380"
+          frameborder="0"
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+        ></iframe>
+      </div>
+    </div>
+  </section>
+  {% endcomment %}
+
+  <section class="">
+    <div class="container p-5">
+      <div class="spotify-embed pt-5">
+        {% if playlist_id is None %}
+        <p>Error displaying playlist</p>
+        {% else %}
+        <h1 class="h6 text-light text-">
+          Spotify playlist generated from your current weather
+        </h1>
+        {% comment %}
+        <h1 class="h6 text-light text-">spotify username:{{current_user}}</h1>
+        {% endcomment %}
+        <iframe
+          style="opacity: 0.7"
+          src="https://open.spotify.com/embed/playlist/{{playlist_id}}?&theme=0"
+          frameborder="0"
+          allowfullscreen=""
+          allow="autoplay; encrypted-media; "
+        ></iframe>
+        {% endif %}
+      </div>
+    </div>
+  </section>
+</section>
+
+{% endblock content %}

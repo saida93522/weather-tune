@@ -1,0 +1,55 @@
+{% extends 'main.html' %} {% load static %} {% block content %}
+<div class="container-fluid bg-dark">
+  <div class="row no-gutter">
+    <!-- The image half -->
+    <div class="col-md-6 d-none d-md-flex login-image">
+      <div class="overlay w-50">
+        <p class="display-5 intro">
+          Make your moody soundtrack dreams a reality.
+        </p>
+      </div>
+    </div>
+
+    <!-- The content half -->
+    <div class="col-md-6 login-bg overlay-dark">
+      <div class="login overlay-content d-flex align-items-center py-5">
+        <!-- Demo content-->
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-10 col-xl-7 mx-auto">
+              <h3 class="login-heading mb-4">Welcome back!</h3>
+              <p class="text-muted mb-4">Please sign in</p>
+              <!-- Sign In Form -->
+              <form method="POST" action="{% url 'login' %}">
+                {% csrf_token %}
+                <div class="form-fs form-floating mb-3">{{form.as_p}}</div>
+
+                <div class="form-fs d-grid">
+                  <button
+                    class="btn btn-lg btn-login fw-bold mb-2"
+                    type="submit"
+                  >
+                    Sign in
+                  </button>
+                  <div class="text-center">
+                    <a class="small" href="{% url 'password_reset' %}"
+                      >Forgot password?</a
+                    >
+                  </div>
+                  <div class="text-center mt-4">
+                    <a class="small" href="{% url 'signup' %}"
+                      >Don't have an account? Sign up</a
+                    >
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <!-- End -->
+      </div>
+    </div>
+    <!-- End -->
+  </div>
+</div>
+{% endblock content %}

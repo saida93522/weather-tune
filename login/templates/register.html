@@ -1,0 +1,70 @@
+{% extends 'main.html' %} {% load static %} {% load socialaccount %}
+<!-- block -->
+{% block content %}
+
+<div class="container-fluid bg-dark">
+  <div class="row no-gutter">
+    <!-- The image half -->
+    <div class="col-md-6 d-none d-md-flex signup-image">
+      <div class="overlay w-50">
+        <p class="display-5 intro">Generate a Spotify playlist based on your local weather.</p>
+       
+      </div>
+    </div>
+
+    <!-- The content half -->
+    <div class="col-md-6 login-bg overlay-dark">
+      <div class="login overlay-content d-flex align-items-center py-5">
+        <!-- Demo content-->
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-10 col-xl-7 mx-auto">
+              <h3 class="login-heading mb-4">Join our community!</h3>
+              <p class="text-muted mb-4">Create an account</p>
+              <!-- Sign In Form -->
+              <form method="POST" action="{% url 'signup' %}">
+                {% csrf_token %}
+                <div class="form-fs form-floating mb-3">{{form.as_p}}</div>
+
+                <div class="form-fs d-grid mb-2">
+                  <button
+                    class="btn btn-lg btn-login text-uppercase fw-bold mb-2"
+                    type="submit"
+                  >
+                    Sign in
+                  </button>
+                  <p class="d-block text-center mt-3 small">
+                    Already have an account?
+                    <a
+                      class="text-decoration-underline small"
+                      href="{% url 'login' %}"
+                      >Sign In</a
+                    >
+                  </p>
+
+                  <div class="d-grid">
+                    <p class="d-block text-center mt-3">
+                      Or Signup with
+                      <a
+                        class="text-decoration-underline"
+                        href="{% provider_login_url 'google' process="login"  %}"
+                        ><i class="bx bxl-google bx-border-circle"></i
+                      ></a>
+                      <a class="text-decoration-underline" href="#"
+                        ><i class="bx bxl-twitter bx-border-circle"></i
+                      ></a>
+                    </p>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End -->
+  </div>
+</div>
+
+{% providers_media_js %}
+{% endblock content %}

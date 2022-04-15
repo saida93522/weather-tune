@@ -1,0 +1,229 @@
+body {
+  background: #000;
+  color: #fff;
+  min-width: 100vw;
+  min-height: 100%;
+  font-family: "Roboto", sans-serif;
+  font-size: calc(0.55em + 0.51vw);
+  overflow-x: hidden;
+  background: url("/static/img/bg5.svg") no-repeat fixed;
+  background-size: cover;
+  background-position: bottom;
+}
+
+a {
+  color: #76348c;
+  transition: all 0.5s;
+  text-decoration: none;
+}
+a:hover {
+  color: #b37fcb;
+}
+/* ================== */
+/* Navbar */
+/* ================== */
+
+.navbar {
+  background: transparent;
+}
+
+.navbar .nav-link {
+  background: transparent;
+  transition: all 0.4s;
+  color: #ffffffb3;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link:focus {
+  text-decoration: none;
+  color: #76348c;
+}
+/* Change navbar styling on small viewports */
+
+.navbar {
+  background: rgb(0, 0, 0);
+  box-shadow: 3px 3px 3px #76348c;
+}
+
+/* ================== */
+
+.login-image,
+.signup-image {
+  position: relative;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.intro {
+  color: #f4dfff;
+}
+/* ================== */
+/* Login */
+/* ================== */
+
+.btn-login {
+  font-size: 0.9rem;
+  letter-spacing: 0.05rem;
+  /* padding: 0.55rem 1rem; */
+}
+
+@media (max-width: 770px) {
+  .login-image {
+    object-fit: cover;
+    width: 100%;
+  }
+}
+
+.login-heading {
+  font-weight: 500;
+  font-size: clamp(2rem, 2vw, 5rem);
+}
+
+.form-fs {
+  font-size: clamp(0.8rem, 2vw, 1rem);
+}
+.login,
+.image {
+  min-height: 100vh;
+}
+.login-image {
+  background-image: url("/static/img/bg2_1.png");
+}
+.login-bg {
+  background-image: url("/static/img/stars.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.overlay-dark {
+  position: relative;
+}
+
+.overlay-dark::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #000;
+  display: block;
+  opacity: 0.75;
+}
+
+.overlay-content {
+  z-index: 99;
+  position: relative;
+  color: #b37fcb;
+}
+.btn-login,
+.btn-link {
+  background-color: #7b3c83;
+  text-decoration: none;
+  transition: all 0.5s;
+  color: #ffffffb3;
+}
+.btn-login:hover,
+.btn-link:hover,
+.btn-login:focus,
+.btn-link:focus {
+  color: #e8e3e9;
+  transition: all 0.5s;
+}
+
+/* ================== */
+/* REGISTER */
+/* ================== */
+.signup-image {
+  background-image: url("/static/img/cassette.jpg");
+}
+.signup-image .overlay,
+.login-image .overlay {
+  position: absolute;
+  top: 40%;
+  bottom: 0;
+  right: 0;
+  left: 5%;
+}
+.credit {
+  position: absolute;
+  top: 0;
+  bottom: 50%;
+  right: 0;
+  left: 5%;
+}
+.bx-border-circle {
+  border-color: rgb(255, 255, 255, 0.6);
+  /* color: #b37fcb; */
+  margin-left: 3px;
+}
+.bx-menu-alt-right {
+  color: #76348c;
+  font-size: 2rem;
+}
+
+/* Home */
+.header {
+  position: relative;
+  background-color: black;
+  height: 65vh;
+  min-height: 25rem;
+  width: 100%;
+  overflow: hidden;
+}
+
+.header img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: 0;
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  object-fit: cover;
+}
+
+header .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #76348c;
+  opacity: 0.2;
+  z-index: 1;
+}
+
+.spotify-embed {
+  padding-top: 10rem;
+}
+.home {
+  /* width: 100vw; */
+  /* height: 100vh; */
+  /* background: url("/static/img/hbg.svg") no-repeat; */
+  background-size: cover;
+  background-position: center;
+  object-fit: cover;
+}
+
+.card-data {
+  border-radius: 20px;
+  box-shadow: 0px 8px 16px 4px #db94e9;
+  margin-top: 5rem;
+  margin-bottom: 50px;
+  color: #fff;
+  background: transparent;
+  border: none;
+}
+iframe {
+  display: block;
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8));
+  border-radius: 12px;
+  width: 100%;
+  height: 380px;
+}
