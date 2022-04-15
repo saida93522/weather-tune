@@ -10,6 +10,10 @@
 - Language - Python3
 - Styling - Bootstrap
 
+## API
+
+- Spotify API & OpenWeatherMap API with OAuth 2.0 Authentication.
+
 ![Alternate text](static/img/preview.png)
 
 ## Installation
@@ -50,7 +54,3 @@ Start the server
 ```bash
   run python manage.py runserver
 ```
-
-## API
-
-Spotify API & OpenWeatherMap API with OAuth 2.0 Authentication.
