@@ -6,11 +6,8 @@ from ipify import get_ip
 from ipify.exceptions import ConnectionError, ServiceError
 from django.conf import settings
 from functools import lru_cache
+from ..credentials import IP_TOKEN,WEATHER_API
 
-
-
-IP_TOKEN = os.environ.get('IP_TOKEN')
-WEATHER_API = os.environ.get('WEATHER_API')
 
 
 @lru_cache(maxsize=16)
