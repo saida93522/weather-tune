@@ -14,6 +14,8 @@
 
 - Spotify API & OpenWeatherMap API with OAuth 2.0 Authentication.
 
+![Alternate text](static/img/signUp.png)
+![Alternate text](static/img/login.png)
 ![Alternate text](static/img/preview.png)
 
 ## Installation
