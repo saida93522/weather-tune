@@ -9,9 +9,10 @@ from core import views
 User = get_user_model()
 
 
-@login_required
+@login_required(login_url='login/')
 def home(request):
-    return render(request,'home.html')
+    return redirect(views.home)
+    
 
 def register(request):
     """ Handles user registration flow
@@ -28,7 +29,7 @@ def register(request):
            user = User.objects.create_user(username,email,password)
            if user != None:
                login(request,user)
-               return redirect("/home")
+               return redirect(views.auth_spotify)
         except User.DoesNotExist:
             user = None
             messages.error(request,"Please check the data you entered")

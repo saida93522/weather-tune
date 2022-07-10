@@ -4,7 +4,7 @@ from . import views
 
 
 urlpatterns = [
-    path('', views.authenticate, name='auth_spotify'),
+    path('', views.auth_spotify, name='auth_spotify'),
     path('home/', views.home,  name='home'),
     
     

@@ -9,6 +9,8 @@ import pprint
 import uuid
 
 def get_top_tracks(sp):
+    """ fetches the current user's top tracks songs
+    :returns top_track artist id and track id."""
     results = sp.current_user_top_tracks(limit=1, offset=1, time_range='medium_term')
     
     top_track_data = json.dumps(results['items'],indent=4)
@@ -23,6 +25,7 @@ def get_top_tracks(sp):
   
 
 def create_playlist(sp,user_id):
+    """ :returns new playlist for user."""
     # if logged in get users
     user = sp.user(user=user_id)
     if user != None:

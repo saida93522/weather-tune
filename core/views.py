@@ -16,7 +16,7 @@ def session_cache_path(request):
     session_id = request.session.get('uuid')
     return caches_folder + str(session_id)
 
-def authenticate(request):
+def auth_spotify(request):
     if not request.session.get('uuid'):
         request.session['uuid'] = str(uuid.uuid4())
 
